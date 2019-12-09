@@ -3,7 +3,7 @@
  * el gato jugado con la compu xd
  * 
  * @criss_215
- * @version (1.0)
+ * @version (2.1)
  */
 import javax.swing.JOptionPane;
 import java.util.Scanner;
@@ -31,7 +31,7 @@ public class SuperMichi{
             cat.impri();
             cat.jugadas();
             resp = JOptionPane.showConfirmDialog(null, "¿Quieres jugar otra vez?", "El gato", JOptionPane.YES_NO_OPTION);
-            cat.reset();
+            if(resp==0)cat.reset();
         }while(resp==0);
     }
     private void jugadores(int lt){
@@ -56,13 +56,15 @@ public class SuperMichi{
         }catch(InputMismatchException excepcion){
             System.out.println("ingrese una pocision valida");
             turno=miTurno();
+        }finally{
+            return turno;
         }
-        return miTurno();
     }
     private void jugadas(){
         if(player){
-            x=miTurno()[0];
-            y=miTurno()[1];
+            int[] xy=miTurno();
+            x=xy[0];
+            y=xy[1];
         }else{
             x=compu()[0];
             y=compu()[1];

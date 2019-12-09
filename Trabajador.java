@@ -2,7 +2,7 @@
 /**
  * Write a description of class Trabajador here.
  * 
- * @author (your name) 
+ * @criss_215 
  * @version (a version number or a date)
  */
 public class Trabajador
@@ -22,10 +22,18 @@ public class Trabajador
         this.sueldoB=suelB;
         this.ventas=vent;
         this.comision=comi;
-        this.sueldoF=vent*comi;
+        this.sueldoF=vent*comi+sueldoB;
     }
     
+    public int getClave(){return this.clave;}
+    public String getNombre(){return this.nombre;}
+    public String getArea(){return this.area;}
+    public double getSueldoB(){return this.sueldoB;}
+    public int getVentas(){return this.ventas;}
+    public double getComision(){return this.comision;}
+    public double getSueldoF(){return this.sueldoF;}
+    
     public String toString(){
-        return this.clave +" | "+this.nombre+" | "+this.area+" | "+this.sueldoB+" | "+this.ventas+" | "+this.comision+" | "+this.sueldoF+" | ";
+        return "clave-->"+this.clave+"\nnombre-->"+this.nombre+"\narea de trabajo-->"+this.area+"\nsueldo base-->"+this.sueldoB+"\nventas-->"+this.ventas+"\ncomision-->"+this.comision+"\nsueldo-->"+this.sueldoF+"\n";
     }
 }
